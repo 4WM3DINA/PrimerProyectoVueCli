@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- FORMA 1 -->
+    <div id="app">  
+        <ul v-for="item in personas" :key="item.id">
+            <li>{{item.nombre}}</li>
+            <li>{{item.apellido}}</li>
+            <li>{{item.run}}</li>
+            <li>{{item.nacimiento}}</li>
+            <li>{{item.edad}}</li>
+        </ul>
+        <!-- FORMA 2 -->
+        <!-- PERMITE IDENTIFICAR LAS POSICIONES DE INDEX DEL ID -->
+        <!-- <ul v-for="(item,index) in personas" :key="index">
+            <li>{{index}}{{item.nombre}}</li>
+            <li>{{item.apellido}}</li>
+            <li>{{item.rut}}</li>
+            <li>{{item.nacimiento}}</li>
+            <li>{{item.edad}}</li>
+        </ul>
+        FORMA 3 
+        OTRA FORMA POR MEDDIO DEL SINGULAR-->
+        <!-- <ul v-for="persona in personas" :key="persona.id">
+            <li>{{persona.nombre}}</li>
+            <li>{{persona.apellido}}</li>
+            <li>{{persona.rut}}</li>
+            <li>{{persona.nacimiento}}</li>
+            <li>{{persona.edad}}</li>
+        </ul> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                personas: [
+                    {nombre:'Juan', apellido:'Martinez', run:'12896756-5',nacimiento:'04-04-1998', edad:'23'},
+                    {nombre:'Luis', apellido:'Perez', run:'11896523-1',nacimiento:'11-07-1986', edad:'40'},
+                    {nombre:'Ana', apellido:'Lopez', run:'11852963-7',nacimiento:'05-10-1996', edad:'26'},
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
